@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{53aacd50-654d-4bff-bc38-ac58baf61a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\GLM">
+      <UniqueIdentifier>{fc5c8767-2d42-4952-a4e1-ecdae491881d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\STB">
+      <UniqueIdentifier>{d2177de7-66f5-4021-8ccd-9ecc8a5a40e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Camera.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Color.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hittable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImageBuffer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interval.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Material.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ray.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sphere.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\common.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\exponential.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\ext.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\fwd.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\geometric.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\glm.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\integer.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat2x2.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat2x3.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat2x4.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat3x2.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat3x3.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat3x4.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat4x2.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat4x3.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\mat4x4.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\matrix.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\packing.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\trigonometric.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\vec2.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\vec3.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\vec4.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\glm\vector_relational.hpp">
+      <Filter>External\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="external\Stb\stb_image_write.h">
+      <Filter>External\STB</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ImageBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RayTracingInWeeks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="external\glm\LICENSE.txt">
+      <Filter>External\GLM</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
