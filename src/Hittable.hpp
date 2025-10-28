@@ -17,8 +17,8 @@ struct HitRecord {
   bool frontFace;
   std::shared_ptr<Material> mat;
 
-  void set_face_normal(const mp::Ray& r, const glm::vec3& outwardNormal) {
-    frontFace = glm::dot(r.direction(), outwardNormal) < 0.0f;
+  void set_face_normal(const Ray& r, const glm::vec3& outwardNormal) {
+    frontFace = dot(r.direction(), outwardNormal) < 0.0f;
     normal = frontFace ? outwardNormal : -outwardNormal;
   }
 };
@@ -29,7 +29,7 @@ class Hittable final {
     virtual ~IHittable() = default;
     [[nodiscard]]
     virtual std::unique_ptr<IHittable> copy() const = 0;
-    virtual bool hit(const mp::Ray& ray, Interval<float> interval,
+    virtual bool hit(const Ray& ray, Interval<float> interval,
                      HitRecord& hitRecord) const = 0;
   };
 
@@ -43,7 +43,7 @@ class Hittable final {
     }
 
     [[nodiscard]]
-    bool hit(const mp::Ray& ray, Interval<float> interval,
+    bool hit(const Ray& ray, Interval<float> interval,
              HitRecord& hitRecord) const override {
       return Hit(data, ray, interval, hitRecord);
     }
@@ -57,7 +57,7 @@ class Hittable final {
       : m_self(std::make_unique<HittableObject<T>>(std::move(x))) {}
 
   [[nodiscard]]
-  bool hit(const mp::Ray& ray, Interval<float> interval,
+  bool hit(const Ray& ray, Interval<float> interval,
            HitRecord& hitRecord) const {
     return m_self->hit(ray, interval, hitRecord);
   }

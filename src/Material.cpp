@@ -7,11 +7,11 @@
 namespace mp {
 bool Lambertian::scatter(const Ray& rIn, const HitRecord& rec,
                          glm::vec3& attenuation, Ray& scattered) const {
-  auto direction = rec.normal + mp::random_unit_vector();
-  if (mp::near_zero(direction)) {
+  auto direction = rec.normal + random_unit_vector();
+  if (near_zero(direction)) {
     direction = rec.normal;
   }
-  scattered = mp::Ray(rec.p, direction);
+  scattered = Ray(rec.p, direction);
   attenuation = m_albedo;
   return true;
 }
@@ -23,12 +23,12 @@ std::unique_ptr<Material> Lambertian::clone() const {
 bool Metal::scatter(const Ray& rIn, const HitRecord& rec,
                     glm::vec3& attenuation, Ray& scattered) const {
   const auto reflectedVec =
-      glm::normalize(mp::reflect(rIn.direction(), rec.normal));
+      normalize(mp::reflect(rIn.direction(), rec.normal));
   const auto fuzzedVec =
-      reflectedVec + (mp::random_unit_vector() * m_fuzzFactor);
-  scattered = mp::Ray(rec.p, fuzzedVec);
+      reflectedVec + (random_unit_vector() * m_fuzzFactor);
+  scattered = Ray(rec.p, fuzzedVec);
   attenuation = m_albedo;
-  return true;
+  return dot(fuzzedVec, rec.normal) > 0;
 }
 
 std::unique_ptr<Material> Metal::clone() const {
@@ -40,21 +40,21 @@ bool Dielectric::scatter(const Ray& rIn, const HitRecord& rec,
   attenuation = glm::vec3(1.0f);
   const float ri = rec.frontFace ? (1.0f / m_refractionRate) : m_refractionRate;
 
-  const auto unitRayDirection = glm::normalize(rIn.direction());
+  const auto unitRayDirection = normalize(rIn.direction());
 
   glm::vec3 direction;
 
   const float cosTheta =
-      std::fmin(glm::dot(-unitRayDirection, rec.normal), 1.0f);
+      std::fmin(dot(-unitRayDirection, rec.normal), 1.0f);
   const float sinTheta = std::sqrt(1.0f - cosTheta * cosTheta);
 
   if (const bool bCanRefract = ri * sinTheta <= 1.0f;
-      !bCanRefract || reflectance(cosTheta, ri) > mp::random_float()) {
+      !bCanRefract || reflectance(cosTheta, ri) > random_float()) {
     direction = mp::reflect(unitRayDirection, rec.normal);
   } else {
     direction = mp::refract(unitRayDirection, rec.normal, ri);
   }
-  scattered = mp::Ray(rec.p, direction);
+  scattered = Ray(rec.p, direction);
   return true;
 }
 

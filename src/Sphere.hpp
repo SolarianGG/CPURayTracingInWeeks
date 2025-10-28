@@ -11,7 +11,7 @@ struct Sphere {
 };
 
 [[nodiscard]]
-bool Hit(const Sphere& sphere, const mp::Ray& ray, Interval<float> interval,
+bool Hit(const Sphere& sphere, const Ray& ray, Interval<float> interval,
          HitRecord& hitRecord);
 
 }  // namespace mp
